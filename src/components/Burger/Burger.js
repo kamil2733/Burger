@@ -8,12 +8,12 @@ const burger = (props) => {
     let transformedIngradients = Object.keys(props.ingradients)
     .map(igKey => {
         return [...Array(props.ingradients[igKey])].map((_,i) => {
-           return <BurgerIngradient key={igKey + i} type={igKey}/>
+           return <BurgerIngradient key={igKey + i} type={igKey}/>;
         });
     })
-    .reduce((arr,el) =>{
+    .reduce((arr, el) => {
         return arr.concat(el)}, []);
-        if (transformedIngradients.length === 0){
+        if (transformedIngradients.length === 0) {
             transformedIngradients = <p>Proszę zacząć dodawać składniki!</p>
         }
     
